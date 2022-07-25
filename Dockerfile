@@ -29,7 +29,7 @@ RUN curl -SLO "https://github.com/tModLoader/tModLoader/releases/download/v${TMO
 FROM bitnami/dotnet:3.1-debian-10
 
 WORKDIR /terraria-server
-COPY --from=build /terraria-server ./
+COPY --from=terraria-server ./
 
 RUN apt update &&\
     apt -y install procps cron tmux
